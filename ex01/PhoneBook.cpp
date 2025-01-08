@@ -12,6 +12,7 @@
 
 #include <iostream>
 #include "phonebook.hpp"
+
 void PhoneBook::search(Contacts *contacts_array,int i)
 {
 	int j;
@@ -21,44 +22,46 @@ void PhoneBook::search(Contacts *contacts_array,int i)
 		i = 8;
 	while (k != i)
 	{
-		j = 9 - (std::strlen(contacts_array[k].first_name));
+		j = 9 - contacts_array[k].get_firstname().size();
+		std::cout <<j;
 		while (j >= 0)
 		{
 			std::cout<< ' ';
 			j--;
 		}
-		std::cout<<contacts_array[k].first_name;
+		std::cout<<contacts_array[k].get_firstname();
 		std::cout<<'|';
-		j = 9 - (std::strlen(contacts_array[k].last_name));
+		j = 9 - contacts_array[k].get_lastname().size();
 		while (j >= 0)
 		{
 			std::cout<< ' ';
 			j--;
 		}
-		std::cout<<contacts_array[k].last_name;
+		std::cout<<contacts_array[k].get_lastname();
 		std::cout<<'|';
-		j = 9 - (std::strlen(contacts_array[k].nickname));
+		j = 9 - contacts_array[k].get_nickname().size();
 		while (j >= 0)
 		{
 			std::cout<< ' ';
 			j--;
 		}
-		std::cout<<contacts_array[k].nickname;
+		std::cout<<contacts_array[k].get_nickname();
 		std::cout<<'|';
-		j = 9 - (std::strlen(contacts_array[k].phone_number));
+		j = 9 - contacts_array[k].get_phonenumber().size();
 		while (j >= 0)
 		{
 			std::cout<< ' ';
 			j--;
 		}
-		std::cout<<contacts_array[k].phone_number;
+		std::cout<<contacts_array[k].get_phonenumber();
 		std::cout<<'|';
+		j = 9 - contacts_array[k].get_darkestsecret().size();
 		while (j >= 0)
 		{
 			std::cout<< ' ';
 			j--;
 		}
-		std::cout<<contacts_array[k].darkest_secret;
+		std::cout<<contacts_array[k].get_darkestsecret();
 		std::cout<<std::endl;
 		k++;
 	}

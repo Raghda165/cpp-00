@@ -1,17 +1,17 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: ryagoub <ryagoub@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/12/09 13:46:52 by ryagoub           #+#    #+#              #
-#    Updated: 2024/12/10 07:25:40 by ryagoub          ###   ########.fr        #
+#    Created: 2024/12/09 12:36:33 by ryagoub           #+#    #+#              #
+#    Updated: 2024/12/09 13:59:40 by ryagoub          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
-CPPFILES = PhoneBook.cpp main.cpp contacts.cpp
+NAME = program
+CPPFILES = Account.cpp tests.cpp 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 OFILES = $(CPPFILES:.cpp=.o)
 CPPC = g++
