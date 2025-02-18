@@ -38,13 +38,12 @@ int		main( void ) {
 	ints_t::iterator	wit_end		= withdrawals.end();
 
 	Account::displayAccountsInfos();
-
 	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
 
 	for ( acc_int_t it( acc_begin, dep_begin );
 		  it.first != acc_end && it.second != dep_end;
-		  ++(it.first), ++(it.second) )
-		   {
+		  ++(it.first), ++(it.second) ) {
+
 		(*(it.first)).makeDeposit( *(it.second) );
 	}
 
@@ -63,8 +62,6 @@ int		main( void ) {
 
 	return 0;
 }
-
-
 
 
 // ************************************************************************** //

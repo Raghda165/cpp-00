@@ -6,29 +6,24 @@
 #    By: ryagoub <ryagoub@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/09 13:46:52 by ryagoub           #+#    #+#              #
-#    Updated: 2024/12/10 07:25:40 by ryagoub          ###   ########.fr        #
+#    Updated: 2025/01/09 20:28:59 by ryagoub          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phonebook
 CPPFILES = PhoneBook.cpp main.cpp contacts.cpp
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-OFILES = $(CPPFILES:.cpp=.o)
-CPPC = g++
+CPP = c++
 
 all: $(NAME)
 
-$(NAME): $(OFILES)
-	$(CPPC) $(CFLAGS) $(CPPFILES) -o $(NAME)
-
-%.o: %.cpp
-	$(CPPC) $(CFLAGS) -c $< -o $@
+$(NAME):
+	$(CPP) $(CFLAGS) $(CPPFILES) -o $(NAME)
 
 clean:
-	$(RM) $(OFILES)
+	$(RM) $(NAME)
 
 fclean: clean
-	$(RM) $(NAME)
 
 re: fclean all
 

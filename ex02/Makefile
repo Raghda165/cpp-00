@@ -1,34 +1,29 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: ryagoub <ryagoub@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/09 12:36:33 by ryagoub           #+#    #+#              #
-#    Updated: 2024/12/09 13:59:40 by ryagoub          ###   ########.fr        #
+#    Updated: 2025/01/09 20:30:13 by ryagoub          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = program
-CPPFILES = Account.cpp tests.cpp 
+CPPFILES = Account.cpp tests.cpp
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-OFILES = $(CPPFILES:.cpp=.o)
-CPPC = g++
+CPP = c++
 
 all: $(NAME)
 
-$(NAME): $(OFILES)
-	$(CPPC) $(CFLAGS) $(CPPFILES) -o $(NAME)
-
-%.o: %.cpp
-	$(CPPC) $(CFLAGS) -c $< -o $@
+$(NAME):
+	$(CPP) $(CFLAGS) $(CPPFILES) -o $(NAME)
 
 clean:
-	$(RM) $(OFILES)
+		$(RM) $(NAME)
 
 fclean: clean
-	$(RM) $(NAME)
 
 re: fclean all
 
